@@ -19,7 +19,7 @@ module.exports.save =  function(req,res){
     });
 };
 module.exports.find = function(req,res){
-    product.findById( {product_name: req.body.fn},function(err,response){
+    product.find( {product_name: req.body.fn},function(err,response){
         if(err) res.send("Loi");
         else{
             if(response.length==0) res.send("khong tim thay");

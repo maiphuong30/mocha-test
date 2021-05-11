@@ -80,7 +80,7 @@ it("should return product",function(done){
       //res.status.should.equal(200);
       // Error key should be false.
       //res.body.error.should.equal(false);
-      res.body.should.be.a('object');
+      res.body.should.be.a('array');
       done();
     });
   });
