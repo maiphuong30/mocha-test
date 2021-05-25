@@ -10,5 +10,5 @@ router.get('/add', function(req, res){
     res.render('add',{title:'Add'})
  });
 router.post('/add',ctl.save);
-router.get('/find',ctr.find)
+router.get('/find',ctl.find)
 module.exports = router;
