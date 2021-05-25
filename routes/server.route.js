@@ -12,5 +12,6 @@ router.get('/add', function(req, res){
 router.post('/add',ctl.save);
 router.get('/find/:fn',ctl.find);
 router.get('/show',ctl.all);
-router.delete('/delete',ctl.find);
+//router.delete('/delete/:dname', ctl.del);
+router.post('/delete',ctl.del);
 module.exports = router;

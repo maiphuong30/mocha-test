@@ -39,3 +39,12 @@ module.exports.all = function(req,res){
         }
     });
 }
+module.exports.del = function(req,res){
+    product.deleteOne({ product_name: req.body.dname}, function(err){
+        if(err) res.send("Loi");
+        else
+        res.send({
+            message: "successfully delete!"
+        });
+     });
+}

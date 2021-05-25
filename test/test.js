@@ -92,4 +92,16 @@ describe("SAMPLE unit test",function(){
       done();
     });
   });
+  it("should delete product",function(done){
+    //var dname='c';
+    //calling ADD api
+    server
+    .post('/delete')
+    .send({dname : 'c'})
+    .expect(200)
+    .end(function(err,res){
+      res.body.should.have.property('message').eql('successfully delete!');
+      done();
+    });
+});
 });
