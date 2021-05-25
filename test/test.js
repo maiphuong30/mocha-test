@@ -29,9 +29,9 @@ describe("SAMPLE unit test",function(){
       done();
     });
   })
-  // #1 should return add page
+  // #2 should return add page
 
-  /*it("should return add page",function(done){
+  it("should return add page",function(done){
 
     // calling add page api
     server
@@ -45,7 +45,7 @@ describe("SAMPLE unit test",function(){
       //res.body.error.should.equal(false);
       done();
     });
-  });*/
+  });
   it("should add product",function(done){
 
     //calling ADD api
@@ -58,12 +58,34 @@ describe("SAMPLE unit test",function(){
       done();
     });
 });
-it("should return product",function(done){
+  it("should return product",function(done){
+    var fn='lala';
+    // calling find page api
+    server
+    .get("/find/"+fn)
+    .expect(200) // THis is HTTP response
+    .end(function(err,res){
+      res.body.should.be.a('array');
+      done();
+    });
+  });
+  /*it("should return message khong tim thay",function(done){
+
+    // calling find page api
+    var fn='ko co san pham nay';
+    server
+    .get("/find"+fn)
+    .expect(200) // THis is HTTP response
+    .end(function(err,res){
+      res.body.should.have.property('message').eql('khong tim thay');
+      done();
+    });
+  });*/
+  it("should return list of product",function(done){
 
     // calling find page api
     server
-    .get("/find")
-    .send({fn : "qq"})
+    .get("/show")
     .expect(200) // THis is HTTP response
     .end(function(err,res){
       res.body.should.be.a('array');

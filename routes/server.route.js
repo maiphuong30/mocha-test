@@ -8,7 +8,9 @@ router.get('/',function(req,res){
 });
 router.get('/add', function(req, res){
     res.render('add',{title:'Add'})
- });
+});
 router.post('/add',ctl.save);
-router.get('/find',ctl.find)
+router.get('/find/:fn',ctl.find);
+router.get('/show',ctl.all);
+router.delete('/delete',ctl.find);
 module.exports = router;

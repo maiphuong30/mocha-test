@@ -19,12 +19,23 @@ module.exports.save =  function(req,res){
     });
 };
 module.exports.find = function(req,res){
-    product.find( {product_name: req.body.fn},function(err,response){
-        if(err) res.send("Loi");
+    product.find( {product_name: req.params.fn},function(err,response){
+        if(err) res.json({message : "loi"})
         else{
-            if(response.length==0) res.send("khong tim thay");
+            if(response.length==0){
+                res.send({
+                     message: "khong tim thay"
+                });
+            }
             else res.json(response);
         }
-        
+    });
+}
+module.exports.all = function(req,res){
+    product.find( function(err,response){
+        if(err) res.send("Loi");
+        else{
+            res.json(response);
+        }
     });
 }
