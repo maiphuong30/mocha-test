@@ -21,5 +21,5 @@ mongoose.connect(url,
 app.use('/',r);
 
 app.listen(3000,function(){
-  console.log("I am listening at PORT 3000");
+  console.log("listening at PORT 3000");
 })

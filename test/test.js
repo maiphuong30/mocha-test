@@ -32,23 +32,15 @@ describe("SAMPLE unit test",function(){
   // #2 should return add page
 
   it("should return add page",function(done){
-
-    // calling add page api
     server
     .get("/add")
     .expect("Content-type",/json/)
-    .expect(200) // THis is HTTP response
+    .expect(200)
     .end(function(err,res){
-      // HTTP status should be 200
-      //res.status.should.equal(200);
-      // Error key should be false.
-      //res.body.error.should.equal(false);
       done();
     });
   });
   it("should add product",function(done){
-
-    //calling ADD api
     server
     .post('/add')
     .send({pname : 'mocha test',pqty:3 , pprice : 20})
@@ -60,10 +52,9 @@ describe("SAMPLE unit test",function(){
 });
   it("should return product",function(done){
     var fn='lala';
-    // calling find page api
     server
     .get("/find/"+fn)
-    .expect(200) // THis is HTTP response
+    .expect(200)
     .end(function(err,res){
       res.body.should.be.a('array');
       done();
@@ -71,7 +62,6 @@ describe("SAMPLE unit test",function(){
   });
   /*it("should return message khong tim thay",function(done){
 
-    // calling find page api
     var fn='ko co san pham nay';
     server
     .get("/find"+fn)
@@ -82,11 +72,9 @@ describe("SAMPLE unit test",function(){
     });
   });*/
   it("should return list of product",function(done){
-
-    // calling find page api
     server
     .get("/show")
-    .expect(200) // THis is HTTP response
+    .expect(200)
     .end(function(err,res){
       res.body.should.be.a('array');
       done();
@@ -94,7 +82,6 @@ describe("SAMPLE unit test",function(){
   });
   it("should delete product",function(done){
     //var dname='c';
-    //calling ADD api
     server
     .post('/delete')
     .send({dname : 'c'})
